@@ -1,0 +1,34 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Contacts page</title>{% endblock title %}
+{% block content %}
+
+
+    <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8">
+        <div class="left_content">
+          <div class="single_page">
+            <ol class="breadcrumb">
+              <li><a href="{% url 'home_view' %}">Home</a></li>
+              <li><a href="">{{ news.category }}</a></li>
+            </ol>
+            <h1>{{ news.title }}</h1>
+            <div class="post_commentbox"> <a href="#"><i class="fa fa-user"></i>Botirov</a> <span><i class="fa fa-calendar"></i>{{ news.publish_time }}</span> <a href="#"><i class="fa fa-tags"></i>{{ news.category }}</a> </div>
+            <div class="single_page_content"> <img class="img-center" src="{{ news.image.url }}" alt="">
+              <blockquote>{{ news.body | linebreaks }}</blockquote>
+            </div>
+            <div class="social_link">
+              <ul class="sociallink_nav">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}

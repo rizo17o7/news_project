@@ -1,0 +1,15 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Mahalliy page</title>{% endblock title %}
+{% block content %}
+
+
+    {% for news in mahalliy_yangliklar %}
+        <div class="container">
+            <img src="{{ news.image.url }}" alt="{{ news.title }}">
+        </div>
+    {% endfor %}
+
+
+{% endblock content %}
