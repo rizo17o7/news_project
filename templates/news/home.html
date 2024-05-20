@@ -11,7 +11,7 @@
           <div class="single_iteam"> <a href="{{ news.get_absolute_url }}"> <img src="{{ news.image.url }}" alt=""></a>
             <div class="slider_article">
               <h2><a class="slider_tittle" href="{{ news.get_absolute_url }}">{{ news.title }}</a></h2>
-              <p>{{ news.body | truncatewords:10 }}</p>
+              <p ><a href="{{ news.get_absolute_url }}">{{ news.body | truncatewords:10 }}</a></p>
             </div>
           </div>
             {% endfor %}
@@ -50,7 +50,7 @@
                 <li>
                   <figure class="bsbig_fig"> <a href="{{ maxalliy.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ maxalliy.image.url }}"> <span class="overlay"></span> </a>
                     <figcaption> <a href="{{ maxalliy.get_absolute_url }}">{{ maxalliy.title }}</a> </figcaption>
-                    <p>{{ local_one.body | truncatewords:5 }}</p>
+                    <p> <a href="{{ maxalliy.get_absolute_url }}">{{ maxalliy.body | truncatewords:15 }}</a></p>
                   </figure>
                 </li>
                 {% endif %}
@@ -81,7 +81,7 @@
                   <li>
                     <figure class="bsbig_fig"> <a href="{{ xorij.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ xorij.image.url }}"> <span class="overlay"></span> </a>
                       <figcaption> <a href="{{ xorij.get_absolute_url }}">{{ xorij.title }}</a> </figcaption>
-                      <p>{{ xorij.body | truncatewords:15 }}</p>
+                      <p><a href="{{ xorij.get_absolute_url }}">{{ xorij.body | truncatewords:15 }}</a></p>
                     </figure>
                   </li>
                   {% endif %}
@@ -109,7 +109,7 @@
                   <li>
                     <figure class="bsbig_fig wow fadeInDown"> <a href="{{ texnologiya.get_absolute_url }}" class="featured_img"> <img alt="" src="{{ texnologiya.image.url }}"> <span class="overlay"></span> </a>
                       <figcaption> <a href="{{ texnologiya.get_absolute_url }}">{{ texnologiya.title }}</a> </figcaption>
-                      <p>{{ texnologiya.body | truncatewords:15 }}</p>
+                      <p><a href="{{ texnologiya.get_absolute_url }}">{{ texnologiya.body | truncatewords:15 }}</a></p>
                     </figure>
                   </li>
                   {% endif %}
@@ -173,7 +173,7 @@
                 <li>
                   <figure class="bsbig_fig  wow fadeInDown"> <a class="featured_img" href="{{ sport.get_absolute_url }}"> <img src="{{ sport.image.url }}" alt=""> <span class="overlay"></span> </a>
                     <figcaption> <a href="{{ sport.get_absolute_url }}">{{ sport.title }}</a> </figcaption>
-                    <p>{{ sport.body | truncatewords:15 }}</p>
+                    <p><a href="{{ sport.get_absolute_url }}">{{ sport.body | truncatewords:15 }}</a></p>
                   </figure>
                 </li>
                 {% endif %}

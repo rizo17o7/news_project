@@ -1,3 +1,4 @@
+from django.contrib.auth.models import User
 from django.urls import reverse
 from django.utils import timezone
 from django.db import models
@@ -60,3 +61,34 @@ class Contact(models.Model):
     def __str__(self):
         return self.email
 
+
+class Social(models.Model):
+    facebook = models.CharField(max_length=100)
+    twitter = models.CharField(max_length=100)
+    flickr = models.CharField(max_length=100)
+    pinterest = models.CharField(max_length=100)
+    googleplus = models.CharField(max_length=100)
+    vimeo = models.CharField(max_length=100)
+    youtube = models.CharField(max_length=100)
+    mail = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.mail
+
+
+class Comment(models.Model):
+    news = models.ForeignKey(News,
+                             on_delete=models.CASCADE,
+                             related_name='comments')
+    user = models.ForeignKey(User,
+                             on_delete=models.CASCADE,
+                             related_name='comments')
+    body = models.TextField()
+    created_time = models.DateTimeField(auto_now_add=True)
+    active = models.BooleanField(default=True)
+
+    class Meta:
+        ordering = ["created_time"]
+
+    def __str__(self):
+        return f"Comment -{self.body} by {self.user}"

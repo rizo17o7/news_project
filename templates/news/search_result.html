@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Qidiruv bolimi</title>{% endblock title %}
+{% block content %}
+
+    {% if barcha_yangliklar.exists %}  <!-- Проверяем, есть ли результаты -->
+        {% for yanglik in barcha_yangliklar %}
+            <h3>{{ yanglik.title }}</h3>
+            <p>{{ yanglik.body }}</p>  <!-- Добавляем тело новости, если нужно -->
+        {% endfor %}
+    {% else %}
+        <p>Hech narsa topilmadi</p>
+    {% endif %}
+
+{% endblock content %}

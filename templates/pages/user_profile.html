@@ -1,0 +1,11 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Foydalanuvchi saxifasi</title>{% endblock title %}
+{% block content %}
+
+    <h1>Xush kelibsiz, {{ user.username }}</h1>
+    <h3><a href="{% url 'change_password' %}"> Parolni ozgartirish!</a></h3>
+    <h3><a href="{% url 'logout' %}">Log out</a></h3>
+
+{% endblock content %}

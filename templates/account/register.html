@@ -1,0 +1,15 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Royixattan otish</title>{% endblock title %}
+{% block content %}
+
+  <h1>Yangi foydalanuvchini royihattan otqazish!</h1>
+  <p>Royixattan otish ushun malumotlaringizni kiriting!</p>
+
+  <form method="post">{% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit" > Royixattan otish</a></button>
+  </form>
+
+{% endblock content %}

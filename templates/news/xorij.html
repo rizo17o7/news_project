@@ -1,8 +1,21 @@
 {% extends 'news/base.html' %}
 {% load static %}
 
-{% block title %}<title>Mahalliy page</title>{% endblock title %}
+{% block title %}<title>Xorij page</title>{% endblock title %}
+
 {% block content %}
 
+    {% for news in xorij_yangliklar %}
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8">
+                    <a href="{{ news.get_absolute_url }}">
+                    <img src="{{ news.image.url }}" alt="{{ news.title }}"width="50%">
+                    <h1>{{ news.title }}</h1>
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
 
 {% endblock content %}

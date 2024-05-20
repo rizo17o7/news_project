@@ -1,0 +1,15 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Login saxifa</title>{% endblock title %}
+{% block content %}
+
+  <h1>Veb saytka kirish!</h1>
+  <p>Login va parolingizni kiriting!</p>
+
+  <form method="post">{% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit" ><a href="{% url 'user_profile' %}"> Sign in</a></button>
+  </form>
+
+{% endblock content %}

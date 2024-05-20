@@ -1,0 +1,16 @@
+{% extends 'news/base.html' %}
+{% load static %}
+
+{% block title %}<title>Malumotlarni ozgartirish!</title>{% endblock title %}
+{% block content %}
+
+  <h1>Foydalanuvchi malumotlarini ozgartirish!</h1>
+  <p>Malumotlaringizni shu yerdan ozgartirishingiz mumkun!</p>
+
+  <form method="post" enctype="multipart/form-data">{% csrf_token %}
+      {{ user_form.as_p }}
+      {{ profile_form.as_p }}
+    <button type="submit" ><a href="{% url 'user_profile' %}"> Royixattan otish</a></button>
+  </form>
+
+{% endblock content %}

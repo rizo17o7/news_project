@@ -36,6 +36,12 @@
             </ul>
           </div>
           <div class="header_top_right">
+            {% if request.user.is_authenticated %}
+            <p><a href="{% url 'user_profile' %}"style="color: yellow">My profile</a> </p>
+            <p><a href="{% url 'logout' %}"style="color: red">Log out</a> </p>
+            {% else %}
+            <p><a href="{% url 'login' %}" style="color: yellow">Royhattan otish</a> </p>
+            {% endif %}
             <p>{% now "j F Y H:i" %}</p>
           </div>
         </div>
@@ -62,6 +68,12 @@
           <li><a href="{% url 'sport_news_page' %}">Sport</a></li>
           <li><a href="{% url 'contacts_view' %}">Contact Us</a></li>
           <li><a href="{% url 'error_view' %}">404</a> </li>
+          <li>
+            <form method="GET" action="{% url 'search_result' %}">
+              <input type="text" name="q" placeholder="Qidiruv...">
+              <button type="submit">Qidir</button>
+            </form>
+          </li>
         </ul>
       </div>
     </nav>
@@ -77,14 +89,14 @@
           </ul>
           <div class="social_area">
             <ul class="social_nav">
-              <li class="facebook"><a href="#"></a></li>
-              <li class="twitter"><a href="#"></a></li>
-              <li class="flickr"><a href="#"></a></li>
-              <li class="pinterest"><a href="#"></a></li>
-              <li class="googleplus"><a href="#"></a></li>
-              <li class="vimeo"><a href="#"></a></li>
-              <li class="youtube"><a href="#"></a></li>
-              <li class="mail"><a href="#"></a></li>
+              <li class="facebook"><a href="{{ social_sytes.facebook }}"></a></li>
+              <li class="twitter"><a href="{{ social_sytes.twitter }}"></a></li>
+              <li class="flickr"><a href="{{ social_sytes.flickr }}"></a></li>
+              <li class="pinterest"><a href="{{ social_sytes.pinterest }}"></a></li>
+              <li class="googleplus"><a href="{{ social_sytes.googleplus }}"></a></li>
+              <li class="vimeo"><a href="{{ social_sytes.vimeo }}"></a></li>
+              <li class="youtube"><a href="{{ social_sytes.youtube }}"></a></li>
+              <li class="mail"><a href="{{ social_sytes.mail }}"></a></li>
             </ul>
           </div>
         </div>
@@ -105,7 +117,7 @@
       <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-4">
           <div class="footer_widget wow fadeInLeftBig">
-            <h2>Flickr Images</h2>
+            <h2>Rasmlar</h2>
           </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
